@@ -5,6 +5,7 @@ from django.db import models
 class Produto(models.Model):
     nome = models.CharField(max_length=100)
     preco = models.IntegerField()
+    quantidade = models.IntegerField(default=0) #balnk=True, null=True
     
     #public static void main
     def __str__(self): # Metodo que recebe um objeto que converte automaticamente para string
