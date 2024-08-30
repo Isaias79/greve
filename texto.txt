@@ -1,1 +1,28 @@
 Conteúdo da Prova, até a pesquisa nos bancos de dados.
+
+Aula 02/08/2024
+
+def home(request):
+    resultado = produto.objects.all()
+    return render (request, 'loja/home.html', {'resposta': resultado}) // OU PODE SER CRASE
+
+{%resposta%} // Bloco de comando
+{{resultado}} // Mostrar a Variável
+
+<ol> // Order List
+{% for produto in resposta %}
+    <li> {{p.nome}} </li>
+    <li> {{p.preco}} </li> // In the new Archive templates
+{%endfor%}
+</ol>
+
+Criar um Template modelo
+New Archive: base.html
+Create Bloco: {% block conteudo %} ... {% end block %}
+Extension of base template html: {% extends 'loja/base.html'%}
+In The New Rchive not base, but extension:  {%block conteudo%} ...  // OS BLOCK SAO AS PARTES DA BASE QUE ELE CHAMA
+                                                {%for produto in resultado%} 
+                                            ... {% end block %} //END JUNTO
+        New Template:
+
+        preco.html
